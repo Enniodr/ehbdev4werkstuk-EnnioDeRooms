@@ -2,16 +2,21 @@
 
 $(function () {
 
+	let filters = {
+		genre: [""],
+		goelgroep: [""]
+	}
+
 	$.ajax({
 		url: "entries.json",
 		method: "GET",
 		dataType: "json",
 	}).done(function (data) {
 		//alle items zitten in data
-		console.log(data);
+		//console.log(data);
 
 		//de array van objecten
-		console.log(data.items);
+		//console.log(data.items);
 
 		//categorie van 1 objet
 		console.log(data.items[0].category)
@@ -20,6 +25,7 @@ $(function () {
 	});
 });
 
+//laad de html op de pagina nadat de filters zijn toegepast
 function loadHTML(data) {
 
 	$.each(data, function (index, data) {
